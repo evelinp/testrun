@@ -13,59 +13,64 @@ $(document).ready(
 		var num2 = 0;
 		var total = 0;
 		
-		var add = function(){
+		var showNumber = function(){
+			$("#display").html(total);	
+		};
+		
+		var getNumber = function(){
 			num1 = parseInt($("#num1").val());
 			num2 = parseInt($("#num2").val());	
+		};
+		
+		var add = function(){	
+			getNumber();
 			total = num1 + num2
 		}
 		
 		var subt = function(){
-			num1 = parseInt($("#num1").val());
-			num2 = parseInt($("#num2").val());	
+			getNumber();
 			total = num1 - num2
 		}
 		
 		var mult = function(){
-			num1 = parseInt($("#num1").val());
-			num2 = parseInt($("#num2").val());	
+			getNumber();
 			total = num1 * num2
 		}
 		
 		var divi = function(){
-			num1 = parseInt($("#num1").val());
-			num2 = parseInt($("#num2").val());	
+			getNumber();
 			total = num1 / num2
 		}
 		
 		$("#add").click(
 			function(){
-				add();
-				
-				$("#display").html(total);
+				add();	
 			}
 		);	
 		
 		$("#subt").click(
 			function(){
-				subt();
-				
-				$("#display").html(total);
+				subt();	
 			}
 		);	
 		
 		$("#mult").click(
 			function(){
 				mult();
-				$("#display").html(total);
 			}
 		);	
 		
 		$("#divi").click(
 			function(){
 				divi();
-				$("#display").html(total);
 			}
 		);	
+		
+		$("#calc").click(
+			function(){
+				showNumber();	
+			}
+		);
 		
 	}
 );
