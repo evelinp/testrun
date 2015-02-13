@@ -6,10 +6,76 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
 </script>
 </head>
-
+<script>
+$(document).ready(
+	function(){
+		var num1 = 0;
+		var num2 = 0;
+		var total = 0;
+		
+		var add = function(){
+			num1 = parseInt($("#num1").val());
+			num2 = parseInt($("#num2").val());	
+			total = num1 + num2
+		}
+		
+		var subt = function(){
+			num1 = parseInt($("#num1").val());
+			num2 = parseInt($("#num2").val());	
+			total = num1 - num2
+		}
+		
+		var mult = function(){
+			num1 = parseInt($("#num1").val());
+			num2 = parseInt($("#num2").val());	
+			total = num1 * num2
+		}
+		
+		var divi = function(){
+			num1 = parseInt($("#num1").val());
+			num2 = parseInt($("#num2").val());	
+			total = num1 / num2
+		}
+		
+		$("#add").click(
+			function(){
+				add();
+				
+				$("#display").html(total);
+			}
+		);	
+		
+		$("#subt").click(
+			function(){
+				subt();
+				
+				$("#display").html(total);
+			}
+		);	
+		
+		$("#mult").click(
+			function(){
+				mult();
+				$("#display").html(total);
+			}
+		);	
+		
+		$("#divi").click(
+			function(){
+				divi();
+				$("#display").html(total);
+			}
+		);	
+		
+	}
+);
+</script>
 <body>
 	<input id='num1' type='text' placeholder='1st #' />
     <button id='add'>+</button>
+    <button id='subt'>-</button>
+    <button id='mult'>*</button>
+    <button id='divi'>/</button>
     <input id='num2' type='text' placeholder='2nd #' />
     <button id='calc'>Calculate</button>
     <div id='display'>
